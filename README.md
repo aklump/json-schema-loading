@@ -19,7 +19,7 @@ _With Callable_
 
 ```php
 $callback = function(string $schema_id, array $schema) {
-  // Remove all required propreties
+  // Remove all required properties.
   $schema['required'] = [];
   return $schema;
 };
@@ -65,4 +65,4 @@ _Note: Schemas are cached globally as a static class variable._
     ]
     ```
 
-1. Then `composer require aklump/json-schema-loading:@dev`
+1. Then `composer require aklump/json-schema-loading:^0.0`

@@ -31,6 +31,19 @@ $callback = function(string $schema_id, array $schema) {
 $loaded_schema = (new \AKlump\JsonSchema\LoadSchema())('foo.schema.json', $callback);
 ```
 
+## JSON as Schema Argument
+
+In addition to loading by filepath to the JSON schema file, you may also load with a JSON schema string.
+
+```php
+$json = '{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "lorem",
+  "title": "Bar"
+}';
+$loaded_schema = (new \AKlump\JsonSchema\LoadSchema())($json);
+```
+
 ## Clear Schema Cache
 
 ```php

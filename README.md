@@ -26,6 +26,19 @@ $callback = function(string $schema_id, array $schema) {
 $loaded_schema = (new \AKlump\JsonSchema\LoadSchema())('foo.schema.json', $callback);
 ```
 
+## JSON as Schema Argument
+
+In addition to loading by filepath to the JSON schema file, you may also load with a JSON schema string.
+
+```php
+$json = '{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "lorem",
+  "title": "Bar"
+}';
+$loaded_schema = (new \AKlump\JsonSchema\LoadSchema())($json);
+```
+
 ## Clear Schema Cache
 
 ```php
@@ -38,17 +51,4 @@ _Note: Schemas are cached globally as a static class variable._
 
 * https://github.com/aklump/json-schema-validation
 
-## Install with Composer
-
-1. Because this is an unpublished package, you must define it's repository in your project's _composer.json_ file. Add the following to _composer.json_:
-
-    ```json
-    "repositories": [
-        {
-            "type": "github",
-            "url": "https://github.com/aklump/json-schema-loading"
-        }
-    ]
-    ```
-
-1. Then `composer require aklump/json-schema-loading:@dev`
+{{ composer_install|raw }}

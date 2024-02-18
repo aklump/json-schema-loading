@@ -1,0 +1,23 @@
+{
+  "name": "aklump/json-schema-loading",
+  "description": "JSON Schema file loaded with caching and event broadcast for runtime manipulations.",
+  "license": "BSD-3-Clause",
+  "autoload": {
+    "psr-4": {
+      "AKlump\\JsonSchema\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "AKlump\\JsonSchema\\Tests\\Unit\\": "./tests_unit"
+    }
+  },
+  "require": {
+    "php": "^7.4 | ^8",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.6",
+    "symfony/event-dispatcher": "^5.4"
+  }
+}

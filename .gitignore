@@ -1,0 +1,5 @@
+/vendor/
+/SPDX-License-Identifier.md
+.idea/
+composer.lock
+/reports/

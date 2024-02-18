@@ -10,9 +10,9 @@ use Symfony\Component\EventDispatcher\EventDispatcher;
 
 /**
  * @covers \AKlump\JsonSchema\LoadSchema
- * @uses \AKlump\JsonSchema\Events\LoadSchemaEvent
+ * @uses   \AKlump\JsonSchema\Events\LoadSchemaEvent
  */
-class LoadSchemaTest extends TestCase {
+final class LoadSchemaTest extends TestCase {
 
   use TestWithFilesTrait;
 

@@ -3,11 +3,12 @@
 namespace AKlump\JsonSchema\Tests\Unit;
 
 use AKlump\JsonSchema\Events\LoadSchemaEvent;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \AKlump\JsonSchema\Events\LoadSchemaEvent
  */
-class LoadSchemaEventTest extends \PHPUnit\Framework\TestCase {
+final class LoadSchemaEventTest extends TestCase {
 
   use \AKlump\JsonSchema\Tests\Unit\TestingTraits\TestWithFilesTrait;
 

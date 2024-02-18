@@ -3,12 +3,13 @@
 namespace AKlump\JsonSchema;
 
 use AKlump\JsonSchema\Events\LoadSchemaEvent;
+use InvalidArgumentException;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
  * Class LoadSchemaEvent
  *
- * This class handles loading and cacheing of  JSON schemas, with optional event
+ * This class handles loading and caching of  JSON schemas, with optional event
  * dispatching for dynamic schema modifications on first load.
  */
 final class LoadSchema {
@@ -87,7 +88,7 @@ final class LoadSchema {
     if (is_object($dispatcher)) {
       $more_info = ': ' . get_class($dispatcher);
     }
-    throw new \InvalidArgumentException(sprintf('Unknown dispatcher%s.', $more_info));
+    throw new InvalidArgumentException(sprintf('Unknown dispatcher%s.', $more_info));
   }
 
   /**
@@ -129,7 +130,7 @@ final class LoadSchema {
     else {
       $decoded = json_decode($json_schema, TRUE);
       if (!is_array($decoded)) {
-        throw new \InvalidArgumentException(sprintf('%s', $json_schema));
+        throw new InvalidArgumentException(sprintf('%s', $json_schema));
       }
       $this->json = $json_schema;
     }
@@ -143,7 +144,7 @@ final class LoadSchema {
     return json_decode($this->json, TRUE);
   }
 
-  private function getCacheId(string $json_schema) {
+  private function getCacheId(string $json_schema): string {
     return hash('sha256', $json_schema);
   }
 

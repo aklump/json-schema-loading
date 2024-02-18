@@ -1,8 +1,6 @@
 <?php
 
-$json = '{
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "lorem",
-  "title": "Bar"
-}';
-$loaded_schema = (new \AKlump\JsonSchema\LoadSchema())($json);
+/** @var \Symfony\Component\EventDispatcher\EventDispatcher $dispatcher */
+$dispatcher->addListener(\AKlump\Knowledge\Events\GetVariables::NAME, function (\AKlump\Knowledge\Events\GetVariables $event) {
+  (new \AKlump\Knowledge\User\InstallWithComposerVariable())($event);
+});

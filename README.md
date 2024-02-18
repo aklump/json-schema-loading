@@ -25,7 +25,7 @@ $callback = function(string $schema_id, array $schema) {
 };
 $loaded_schema = (new \AKlump\JsonSchema\LoadSchema())('foo.schema.json', $callback);
 ```
-
+    
 ## JSON as Schema Argument
 
 In addition to loading by filepath to the JSON schema file, you may also load with a JSON schema string.
@@ -36,7 +36,8 @@ $json = '{
   "$id": "lorem",
   "title": "Bar"
 }';
-$loaded_schema = (new \AKlump\JsonSchema\LoadSchema())($json);
+$dispatcher = new Symfony\Component\EventDispatcher\EventDispatcher();
+$loaded_schema = (new \AKlump\JsonSchema\LoadSchema())($json, $dispatcher);
 ```
 
 ## Clear Schema Cache
@@ -48,7 +49,20 @@ $loaded_schema = (new \AKlump\JsonSchema\LoadSchema())($json);
 _Note: Schemas are cached globally as a static class variable._
 
 ## Related Package(s)
-
+    
 * https://github.com/aklump/json-schema-validation
 
-{{ composer_install|raw }}
+## Install with Composer
+
+1. Because this is an unpublished package, you must define it's repository in your project's _composer.json_ file. Add the following to _composer.json_:
+
+    ```json
+    "repositories": [
+        {
+            "type": "github",
+            "url": "https://github.com/aklump/json-schema-loading"
+        }
+    ]
+    ```
+
+1. Then `composer require aklump/json-schema-loading:@dev`

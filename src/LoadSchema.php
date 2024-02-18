@@ -69,7 +69,7 @@ final class LoadSchema {
    *
    * @throws \InvalidArgumentException When the dispatcher is not an instance of EventDispatcherInterface and not callable.
    */
-  private function broadcastEvent($dispatcher, string $schema_id, array &$schema) {
+  private function broadcastEvent($dispatcher, string $schema_id, array &$schema): void {
     if ($dispatcher instanceof EventDispatcherInterface) {
       $event = new LoadSchemaEvent($schema_id, $schema);
       $dispatcher->dispatch($event, LoadSchemaEvent::NAME);

@@ -24,7 +24,7 @@ _With Callable_
 
 ```php
 $callback = function(string $schema_id, array $schema) {
-  // Remove all required propreties
+  // Remove all required properties.
   $schema['required'] = [];
   return $schema;
 };

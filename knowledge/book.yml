@@ -1,1 +1,9 @@
-title: JSON Schema Loading
+title: 'JSON Schema Loading'
+uuid: 17b24eff-4bf3-4069-95bf-201bb07129e8
+chapters:
+  -
+    id: general
+    title: General
+    pages:
+      - changelog
+      - readme
